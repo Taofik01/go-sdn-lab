@@ -5,8 +5,9 @@ import (
 	"fmt"
 	"net"
 	"os"
-	"strings"
 	"strconv"
+	"strings"
+	"time"
 )
 
 func PortScanner() string {
@@ -57,12 +58,10 @@ func PortScanner() string {
 	if protocol != "tcp" && protocol != "udp" {
 		fmt.Println("Invalid protocol. Please enter either 'tcp' or 'udp'.")
 		return ""
-	}
-	
-	 
+	}	 
 	for port := rangeStart; port <= rangeEnd; port++ {
 		address := fmt.Sprintf("%s:%v", input, port)
-		conn, err := net.Dial(protocol, address)
+		conn, err := net.DialTimeout(protocol, address, 100*time.Millisecond)
 		if err != nil {
 			// fmt.Printf("port %s:%d is closed or unreachable\n", input, port)
 			continue
