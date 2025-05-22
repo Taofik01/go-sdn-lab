@@ -16,7 +16,9 @@ import (
 	// portscanner "github.com/Taofik01/go-sdn-lab/portScanner"
 	// "github.com/Taofik01/go-sdn-lab/wordclassifier"
 	// "github.com/Taofik01/go-sdn-lab/dnsresolver"
-	"github.com/Taofik01/go-sdn-lab/packetsniffer"
+	"github.com/Taofik01/go-sdn-lab/packetinjector"
+	// "github.com/Taofik01/go-sdn-lab/packetsniffer"
+	
 )
 
 func main() {
@@ -35,7 +37,14 @@ func main() {
 	// fmt.Println(wordclassifier.WordClassifier())
 	// fmt.Println(packetanalyzer.PacketAnalyzer())
 	// fmt.Println(dnsresolver.DnsResolver())
-	fmt.Println(packetsniffer.PacketSniffer() )
+	// fmt.Println(packetsniffer.PacketSniffer() )
+	
+
+
+	fmt.Println(packetinjector.PacketInjector())
+
+	
+
 
 
 

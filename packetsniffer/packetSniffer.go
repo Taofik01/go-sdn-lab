@@ -8,6 +8,7 @@ import (
 
 	"github.com/google/gopacket"
 	"github.com/google/gopacket/pcap"
+	"github.com/Taofik01/go-sdn-lab/findalldevs"
 )
 
 func PacketSniffer() string {
@@ -18,50 +19,14 @@ func PacketSniffer() string {
 	// Open a live packet capture on the specified network interface
 
 
-	devices, err := pcap.FindAllDevs()
-	if err != nil {
-		println("Error finding devices : ", err)
-		// return "Error finding devices"
-	}
-	if len(devices) == 0 {
-		println("No devices found")
-		return ""
-	}
-	println("Available devices: ")
-	for i, device := range devices {
-		fmt.Printf("[%d]: %s | %s", i, device.Name, device.Flags)
-		if device.Description != "" {
-			fmt.Printf(" | %s", device.Description)
-		}
-		if len(device.Addresses) > 0 {
-			fmt.Println(" Addresses: ")
-			for _, address := range device.Addresses {
-				fmt.Printf(" %s |", address.IP)
-				fmt.Printf(" %s\n\n", address.Netmask)
-			}
-
-		}
-	}
-	// Take in the network interface name from the user using the number of the device
-
-	fmt.Println("\nEnter the number of the device you want to sniff: ")
-	var choice int
-	_, err = fmt.Scanln(&choice)
-	if err != nil {
-		fmt.Println("Error reading choice: ", err)
-		return ""
-	}
-	if choice < 0 || choice >= len(devices) {
-		fmt.Println("Invalid choice")
-		// make them pick a valid choice
-		return ""
-	}
-	// print out the device name picked
-	fmt.Printf("You picked device: %s\n", devices[choice].Name)
+	// get the list of all network devices
+		
+	
+	deviceName := findalldevs.FindAllDevs()
 
 	// open the device for live packet capture
 
-	handle, err := pcap.OpenLive(devices[choice].Name, 262144, true, pcap.BlockForever)
+	handle, err := pcap.OpenLive(deviceName, 262144, true, pcap.BlockForever)
     _ = handle.SetBPFFilter("tcp or udp")
 	// log the packets to a file 
 	// fmt.Printf("Opening device %s for live packet capture...\n", devices[choice].Name)
@@ -155,4 +120,8 @@ func PacketSniffer() string {
 	}
 
 	return "Live packet capture successfully on.. "
+}
+
+func FindAllDevs() {
+	panic("unimplemented")
 }
