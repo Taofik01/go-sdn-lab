@@ -1,54 +1,107 @@
-# go-sdn-lab
+# 🛡️ Go-SDN-Lab: Your Toolkit for Software-Defined Networking Experiments 🧪
 
-commiting 5 Go programs to learn basics of manipulating SDN networks (
-    1. For loops 
-    2. Functions with parameters and return values 
-    3. Type casting [between integers, float64 and string, etc.] 
-    4. Arrays and Slices (append, indexing, lens)
-    5. Maps (Create, Insert, Delete, lookup)
+Dive into the world of Software-Defined Networking with **Go-SDN-Lab**! This project provides a suite of tools written in Go for network analysis, packet manipulation, and security exploration. Whether you're a seasoned network engineer or a curious student, this lab offers a hands-on approach to understanding SDN principles.
 
+## 🛠️ Installation
 
-# Build a simple SDN network with 3 switches and 3 hosts
-## Step 1: Define the network structure
-## Step 2: Create a function to add a host to the network
-## Step 3: Create a function to add a switch to the network
-## Step 4: Create a function to connect two switches
-## Step 5: Create a function to connect a host to a switch
-## Step 6: Test the network by adding hosts and switches and connecting them
-## Step 7: Visualize the network
-## Step 8: Add a function to delete a host or switch from the network
-## Step 9: Add a function to update the network
-## Step 10: Test the network by deleting hosts and switches and updating the network
-## Step 11: Visualize the updated network
-## Step 12: Add a function to get the network topology
-## Step 13: Test the network by getting the network topology
-## Step 14: Visualize the network topology
-## Step 15: Add a function to get the network status
-## Step 16: Test the network by getting the network status
-## Step 17: Visualize the network status
-## Step 18: Add a function to simulate a network failure
-## Step 19: Test the network by simulating a network failure
-## Step 20: Visualize the network after the failure
-## Step 21: Add a function to recover from a network failure
-## Step 22: Test the network by recovering from a network failure
-## Step 23: Visualize the network after recovery
-## Step 24: Add a function to get the network statistics
-## Step 25: Test the network by getting the network statistics
+Get started with Go-SDN-Lab in just a few steps:
 
-# Build a packet inspection tool  in the next 48 hours
-## Step 1: Define the packet structure
-## Step 2: Create a function that list all active network interface
-## Step 3: Create a function that capture packets on a network interface
-## Step 4: Create a function to sniff a packet on a selected interface
-## Step 5: Create a function to display the packet details like Logs source IP, destination IP, and protocol to console
-## Step 6: Create a function to save the packet details to a file
-## Step 7: Test the packet inspection tool
-## Step 8: Visualize the packet details
+1.  **Clone the Repository:**
+    ```bash
+    git clone https://github.com/Taofik01/go-sdn-lab.git
+    cd go-sdn-lab
+    ```
 
+2.  **Install Dependencies:**
+    ```bash
+    go mod download
+    ```
 
-# Goals for the next 30 days 
-## By the end of this week Build a CLI tool to view all active network interfaces, their IP addrress and connections on Linux
+3.  **Build the Project:**
+    ```bash
+    go build -o go-sdn-lab main.go
+    ```
 
+## 🚀 Usage
 
+Go-SDN-Lab includes a variety of tools that can be used for different networking tasks. Here's a quick overview:
 
+<details>
+<summary>🔍 **DNS Resolver**</summary>
+  
+  Resolve domain names to IP addresses and retrieve MX and NS records.
+  
+  ```bash
+  go run main.go dnsresolver <domain_name>
+  ```
+</details>
 
+<details>
+<summary> 📡 **Packet Sniffer**</summary>
+  
+  Capture and analyze network packets in real-time.
+  
+  ```bash
+  go run main.go packetsniffer
+  ```
+</details>
+
+<details>
+<summary> 💉 **Packet Injector** </summary>
+  
+  Craft and inject custom packets into the network.
+  
+  ```bash
+  go run main.go packetinjector
+  ```
+</details>
+
+<details>
+<summary> 🔑 **Port Scanner**</summary>
+  
+  Scan for open ports on a target IP address.
+  
+  ```bash
+  go run main.go portscanner <ip_address> <start_port> <end_port>
+  ```
+</details>
+
+## ✨ Features
+
+*   **🔍 DNS Resolver:** Resolve domain names to IP addresses (A, AAAA records), mail servers (MX records), and name servers (NS records).
+*   **📡 Packet Sniffer:** Capture and analyze network packets, displaying protocol, source/destination IPs, and payload.
+*   **💉 Packet Injector:** Inject custom packets with specified protocols and payloads.
+*   **🔑 Port Scanner:** Scan for open TCP and UDP ports on a given IP address.
+*   **📊 Frequency Analyzer:** Analyze the frequency of characters in a given string.
+*   **📝 Sentence Analyzer:** Analyze the frequency of words in a sentence.
+*   **🗂️ Word Classifier:** Classify words as alphabetic, numeric, or alphanumeric.
+*   **📝 Packet Analyzer:** Reads in packets from stdin or a file and analyzes them to display frequency
+
+## 💻 Technologies Used
+
+| Technology  | Link                                  |
+| :---------- | :------------------------------------ |
+| Go          | [https://golang.org/](https://golang.org/)  |
+| gopacket    | [https://github.com/google/gopacket](https://github.com/google/gopacket) |
+
+## 🤝 Contributing
+
+Contributions are welcome! Here are the steps to contribute:
+
+*   ⭐️ Fork the repository
+*   🌱 Create a new branch for your feature or bug fix
+*   🛠️ Make your changes
+*   🧪 Test your changes
+*   🚀 Submit a pull request
+
+## 📜 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## 👨‍💻 Author Info
+
+*   **Taofik Sulaimon**:  [GitHub](https://github.com/Taofik01) | [Twitter](https://X.com/TaofikSulaimon) | [LinkedIn](https://linkedin.com/in/sulaimontaofik)
+
+---
+
+[![Readme was generated by Dokugen](https://img.shields.io/badge/Readme%20was%20generated%20by-Dokugen-brightgreen)](https://www.npmjs.com/package/dokugen)
